@@ -1,12 +1,12 @@
 import "./App.css";
-import Weather from "./Weather";
+import Searchengine from "./Searchengine";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <h1 className="mt-5">Weather App</h1>
-        <Weather />
+        <Searchengine defaultcity="Cape Town" />
         <p>
           This app was created by{" "}
           <a href="https://github.com/Yolokazifumba">Yolokazi Fumba</a> and it
