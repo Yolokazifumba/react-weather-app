@@ -8,8 +8,8 @@ export default function Searchengine(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-   console.log(response)
-    
+    console.log(response);
+
     setWeatherdata({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -19,7 +19,7 @@ export default function Searchengine(props) {
       pressure: Math.round(response.data.main.pressure),
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
-      icon: response.data.weather[0].icon
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -30,9 +30,8 @@ export default function Searchengine(props) {
 
   function handleCity(event) {
     setCity(event.target.value);
-    
   }
-console.log(city);
+  console.log(city);
   function search() {
     let apiKey = "caa883a4a60d93878755b08a933f74ea";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -71,4 +70,3 @@ console.log(city);
     return "loading....";
   }
 }
-

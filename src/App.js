@@ -13,9 +13,9 @@ function App() {
           is open sourced on
           <a href="https://github.com/Yolokazifumba/react-weather-app">
             {" "}
-            Github  
-          </a>
-            and hosted on{" "}
+            Github
+          </a>{" "}
+          and hosted on{" "}
           <a href="https://app.netlify.com/sites/hilarious-yeot-56203a/overview">
             {" "}
             Netlify
