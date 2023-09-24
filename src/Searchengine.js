@@ -4,12 +4,12 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Searchengine(props) {
-  let [weatherdata, setWeatherdata] = useState({ ready: false });
-  let [city, setCity] = useState(props.defaultcity);
+  const [weatherdata, setWeatherdata] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response);
-    console.log(new Date(response.data.dt * 1000));
+   console.log(response)
+    
     setWeatherdata({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -19,18 +19,20 @@ export default function Searchengine(props) {
       pressure: Math.round(response.data.main.pressure),
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
+      icon: response.data.weather[0].icon
     });
   }
 
   function handleSubmit(event) {
-    event.preventdefault();
+    event.preventDefault();
     search();
   }
 
   function handleCity(event) {
     setCity(event.target.value);
+    
   }
-
+console.log(city);
   function search() {
     let apiKey = "caa883a4a60d93878755b08a933f74ea";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -45,7 +47,7 @@ export default function Searchengine(props) {
             <div className="col-9">
               <input
                 type="Search"
-                placeholder="Enter city..."
+                placeholder="Enter a city..."
                 className="form-control"
                 autoFocus="on"
                 onChange={handleCity}
@@ -69,3 +71,4 @@ export default function Searchengine(props) {
     return "loading....";
   }
 }
+

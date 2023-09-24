@@ -4,3 +4,20 @@
   display: block;
   margin: 0 auto;
 }
+
+.temperarature{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 60px;
+}
+
+.weatherinfo canvas{
+  margin: 10px auto;
+  padding: 0;
+}
+
+.units{
+  position: relative;
+  font-size: 16px;
+  top: -42px;
+}

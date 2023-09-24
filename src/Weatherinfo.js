@@ -1,21 +1,26 @@
 import React from "react";
 import Currentdate from "./Currentdate";
+import "./Weather.css";
+import WeatherIcon from "./WeatherIcon"
 
 export default function Weatherinfo(props) {
   return (
     <div className="weatherinfo">
+      <h1 className="mt-4">{props.info.city}</h1>
+      <p>
+        Last updated: <Currentdate date={props.info.date} />
+      </p>
       <div className="row">
-        <h1 className="mt-4">{props.info.city}</h1>
-        <p>
-          Last updated: <Currentdate date={props.info.date} />
-        </p>
-        <div className="col-6 d-flex">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-            alt="weather condition"
-            width="80px"
-          />
-          <h2>{props.info.temperature}°C</h2>
+        <div className="col-6">
+          <div className="clearfix">
+            <div className="float-left">
+              <WeatherIcon code={props.info.icon} />
+              <span className="temperarature">
+                {props.info.temperature}
+                <span className="units">°C</span>
+              </span>
+            </div>
+          </div>
         </div>
         <div className="col-6">
           <ul className="list-unstyled">
