@@ -40,7 +40,7 @@ export default function Currentdate(props) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  console.log(Date);
+
   return (
     <span>
       {day} {month} {date} {hours}:{minutes}
