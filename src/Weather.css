@@ -1,29 +1,85 @@
+body{
+  background-image:url("./media/weather3.jpg") ;
+  background-position: center;
+}
+a {
+  text-decoration: none;
+  ;
+}
+.App .container{
+  margin-top: 150px;
+}
 .weather-app {
-  border: 1px solid grey;
+  border: 1px solid transparent;
+  border-radius: 10px;
   padding: 30px;
   display: block;
   margin: 0 auto;
+  background-color: white;
+  
 }
 
-.temperature {
-  font-size: 60px;
-  font-weight: bold;
-  line-height: 60px;
-}
 
-.weatherinfo canvas {
+
+.weather-info canvas {
   margin: 10px auto;
   padding: 0;
+  margin-top: 33px;
+}
+.weather-info .temperature {
+  font-size: 75px;
+  font-weight: bold;
+  line-height: 60px;
+  margin-top: 25px;
 }
 
-.units {
+.weather-info .description{
+ margin-top: 50px;
+ font-size: 30px;
+ margin-left: 10px;
+ text-transform: capitalize;
+}
+
+.weather-info .icon{
+  margin-right: 15px;
+}
+.weather-info .units {
   position: relative;
   font-size: 16px;
   top: -42px;
-
   color: black;
+  margin-top: 10px;
 }
 
-a {
-  text-decoration: none;
+.Detailed-Weather-Info .detailed-temperature{
+background-color: white;
+border-radius: 10px;
+padding: 15px;
+margin-bottom: 20px;
 }
+
+.Detailed-Weather-Info{
+  background-color: rgb(245, 240, 233);
+  padding: 20px;
+  border-radius: 20px;
+ margin-right: 0px;
+}
+
+.detailed-conditions{
+background-color: white;
+border-radius: 10px;
+padding: 15px 60px 8px 15px;
+margin-left: 0px;
+margin-bottom: 20px;
+
+}
+
+.detailed-conditions-wind{
+background-color: white;
+border-radius: 10px;
+padding: 15px 83px 5px 15px;
+margin-left: 0px;
+margin-bottom: 20px;
+
+}
+
