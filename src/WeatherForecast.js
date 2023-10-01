@@ -7,7 +7,7 @@ import "./WeatherForecast.css";
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState("");
-  let [forecastHourly, setForecastHourly] = useState("")
+  
 
   useEffect(() => {
     setLoaded(false);
@@ -15,7 +15,6 @@ export default function WeatherForecast(props) {
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
-    setForecastHourly(response.data.hourly);
     setLoaded(true);
   }
 
