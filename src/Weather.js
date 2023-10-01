@@ -11,7 +11,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response);
+
 
     setWeatherdata({
       maxtemp:Math.round(response.data.main.temp_max),
@@ -70,7 +70,6 @@ export default function Weather(props) {
           </div>
         </form>
         <CurrentWeatherinfo info={weatherdata} />
-
         <WeatherForecast coordinates={weatherdata.coordinates} />
         <div>
           <DetailedWeatherInfo info={weatherdata} />
