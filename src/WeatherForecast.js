@@ -3,11 +3,9 @@ import ForecastDay from "./ForecastDay";
 import axios from "axios";
 import "./WeatherForecast.css";
 
-
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState("");
-  
 
   useEffect(() => {
     setLoaded(false);
@@ -21,7 +19,6 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="weather-forecast">
-       
         <div className="row">
           {forecastData.map(function (dailyforecast, index) {
             if (index < 5) {
@@ -42,7 +39,7 @@ export default function WeatherForecast(props) {
     let latitude = props.coordinates.lat;
     let apiKey = "4d1bfff5e3f1bce3bdad6b14467347e2";
 
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
     return "loading";
