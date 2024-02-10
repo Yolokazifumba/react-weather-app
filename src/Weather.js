@@ -5,17 +5,14 @@ import axios from "axios";
 import "./Weather.css";
 import DetailedWeatherInfo from "./DetailedWeatherInfo";
 
-
 export default function Weather(props) {
   const [weatherdata, setWeatherdata] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-
-
     setWeatherdata({
-      maxtemp:Math.round(response.data.main.temp_max),
-      mintemp:Math.round(response.data.main.temp_min),
+      maxtemp: Math.round(response.data.main.temp_max),
+      mintemp: Math.round(response.data.main.temp_min),
       feelslike: Math.round(response.data.main.feels_like),
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -30,7 +27,6 @@ export default function Weather(props) {
     });
   }
 
- 
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -39,9 +35,9 @@ export default function Weather(props) {
   function handleCity(event) {
     setCity(event.target.value);
   }
-  
+
   function search() {
-    let apiKey = "caa883a4a60d93878755b08a933f74ea";
+    let apiKey = "4d1bfff5e3f1bce3bdad6b14467347e2";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }

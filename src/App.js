@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Cape Town" />
-        
         <p>
           This app was created by{" "}
           <a href="https://github.com/Yolokazifumba">Yolokazi Fumba</a> and it
